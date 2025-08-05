@@ -1,5 +1,2 @@
-flask
-openai
-requests
-uvicorn
 fastapi
+uvicorn
