@@ -4,7 +4,7 @@ from fastapi.responses import PlainTextResponse
 app = FastAPI()
 
 @app.get("/")
-def read_root():
+async def root():
     return {"message": "הקו מדבר!"}
 
 @app.post("/webhook")
@@ -14,5 +14,7 @@ async def webhook(request: Request):
         user_text = data.get("text", "")
     except:
         user_text = ""
+    
+    # כאן אפשר להכניס את העיבוד של הטקסט בעתיד
 
     return PlainTextResponse("שלום וברוך הבא לקו בינה, איך אפשר לעזור?")
