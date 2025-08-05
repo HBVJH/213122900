@@ -15,3 +15,11 @@ async def webhook(request: Request):
         user_text = ""
 
     return {"text": "שלום וברוך הבא לקו בינה, איך אפשר לעזור?"}
+from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
+
+app = FastAPI()
+
+@app.post("/webhook")
+async def webhook():
+    return PlainTextResponse("שלום וברוך הבא לקו בינה, איך אפשר לעזור?")
